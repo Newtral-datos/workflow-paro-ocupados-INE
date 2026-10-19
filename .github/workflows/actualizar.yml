@@ -1,0 +1,56 @@
+name: Actualizar datos de paro
+
+on:
+  schedule:
+    - cron: "30 11 * * 1-5"  # días laborables, 11:30 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: actualizar-datos
+  cancel-in-progress: false
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      # Si una fuente falla, el paso sigue para guardar lo que sí se actualizó;
+      # el último paso marca el job como fallido para que GitHub avise por correo.
+      - name: Actualizar datos
+        id: actualizar
+        continue-on-error: true
+        run: python actualizar.py
+
+      - name: Procesar CSV y JSON
+        id: procesar
+        continue-on-error: true
+        run: python procesar.py
+
+      - name: Commit si hay cambios
+        run: |
+          git add datos
+          if git diff --cached --quiet; then
+            echo "Sin cambios"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "Actualización de datos $(date -u +%Y-%m-%d)"
+            git push
+          fi
+
+      - name: Avisar de errores
+        if: steps.actualizar.outcome == 'failure' || steps.procesar.outcome == 'failure'
+        run: |
+          echo "::error::Ha fallado alguna fuente o algún CSV. Revisa el log de los pasos anteriores."
+          exit 1

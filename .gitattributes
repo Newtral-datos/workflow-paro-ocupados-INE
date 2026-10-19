@@ -1,0 +1,3 @@
+# Finales de línea LF en los datos, para que no haya diferencias entre Windows y GitHub Actions
+*.csv text eol=lf
+*.json text eol=lf
