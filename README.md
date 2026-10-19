@@ -44,18 +44,19 @@ Datawrapper solo lee `annotate.notes` (lo muestra como *Notas* del gráfico).
 > El repositorio tiene que ser **público**: Datawrapper no puede leer archivos de repos privados.
 
 En Datawrapper: *Upload data → Link external dataset*, pega la URL del CSV y, en
-*Show advanced options*, la URL del JSON de metadatos.
+*Show advanced options*, la URL del JSON de metadatos. La fuente y su URL van en el paso
+*Annotate* (*Source name* y *Source URL*).
 
-| Gráfico | CSV | JSON |
-|---|---|---|
-| Parados | `https://raw.githubusercontent.com/Newtral-datos/workflow-paro-ocupados-INE/main/datos/parados.csv` | `https://raw.githubusercontent.com/Newtral-datos/workflow-paro-ocupados-INE/main/datos/parados.json` |
-| Ocupados | `https://raw.githubusercontent.com/Newtral-datos/workflow-paro-ocupados-INE/main/datos/ocupados.csv` | `https://raw.githubusercontent.com/Newtral-datos/workflow-paro-ocupados-INE/main/datos/ocupados.json` |
-| Tasa de paro | `https://raw.githubusercontent.com/Newtral-datos/workflow-paro-ocupados-INE/main/datos/tasa_paro.csv` | `https://raw.githubusercontent.com/Newtral-datos/workflow-paro-ocupados-INE/main/datos/tasa_paro.json` |
-| Tasa de paro por sexo | `https://raw.githubusercontent.com/Newtral-datos/workflow-paro-ocupados-INE/main/datos/tasa_paro_sexo.csv` | `https://raw.githubusercontent.com/Newtral-datos/workflow-paro-ocupados-INE/main/datos/tasa_paro_sexo.json` |
-| Paro juvenil | `https://raw.githubusercontent.com/Newtral-datos/workflow-paro-ocupados-INE/main/datos/tasa_paro_juvenil.csv` | `https://raw.githubusercontent.com/Newtral-datos/workflow-paro-ocupados-INE/main/datos/tasa_paro_juvenil.json` |
-| Paro por CCAA | `https://raw.githubusercontent.com/Newtral-datos/workflow-paro-ocupados-INE/main/datos/tasa_paro_ccaa.csv` | `https://raw.githubusercontent.com/Newtral-datos/workflow-paro-ocupados-INE/main/datos/tasa_paro_ccaa.json` |
-| Paro en Europa | `https://raw.githubusercontent.com/Newtral-datos/workflow-paro-ocupados-INE/main/datos/tasa_paro_europa.csv` | `https://raw.githubusercontent.com/Newtral-datos/workflow-paro-ocupados-INE/main/datos/tasa_paro_europa.json` |
-| Paro juvenil en Europa | `https://raw.githubusercontent.com/Newtral-datos/workflow-paro-ocupados-INE/main/datos/paro_juvenil_europa.csv` | `https://raw.githubusercontent.com/Newtral-datos/workflow-paro-ocupados-INE/main/datos/paro_juvenil_europa.json` |
+| Gráfico | CSV | JSON | Fuente | URL de la fuente |
+|---|---|---|---|---|
+| Parados | `https://raw.githubusercontent.com/Newtral-datos/workflow-paro-ocupados-INE/main/datos/parados.csv` | `https://raw.githubusercontent.com/Newtral-datos/workflow-paro-ocupados-INE/main/datos/parados.json` | INE, Encuesta de Población Activa (EPA) | `https://www.ine.es/jaxiT3/Tabla.htm?t=65218` |
+| Ocupados | `https://raw.githubusercontent.com/Newtral-datos/workflow-paro-ocupados-INE/main/datos/ocupados.csv` | `https://raw.githubusercontent.com/Newtral-datos/workflow-paro-ocupados-INE/main/datos/ocupados.json` | INE, Encuesta de Población Activa (EPA) | `https://www.ine.es/jaxiT3/Tabla.htm?t=65109` |
+| Tasa de paro | `https://raw.githubusercontent.com/Newtral-datos/workflow-paro-ocupados-INE/main/datos/tasa_paro.csv` | `https://raw.githubusercontent.com/Newtral-datos/workflow-paro-ocupados-INE/main/datos/tasa_paro.json` | INE, Encuesta de Población Activa (EPA) | `https://www.ine.es/jaxiT3/Tabla.htm?t=65219` |
+| Tasa de paro por sexo | `https://raw.githubusercontent.com/Newtral-datos/workflow-paro-ocupados-INE/main/datos/tasa_paro_sexo.csv` | `https://raw.githubusercontent.com/Newtral-datos/workflow-paro-ocupados-INE/main/datos/tasa_paro_sexo.json` | INE, Encuesta de Población Activa (EPA) | `https://www.ine.es/jaxiT3/Tabla.htm?t=65219` |
+| Paro juvenil | `https://raw.githubusercontent.com/Newtral-datos/workflow-paro-ocupados-INE/main/datos/tasa_paro_juvenil.csv` | `https://raw.githubusercontent.com/Newtral-datos/workflow-paro-ocupados-INE/main/datos/tasa_paro_juvenil.json` | INE, Encuesta de Población Activa (EPA) | `https://www.ine.es/jaxiT3/Tabla.htm?t=65334` |
+| Paro por CCAA | `https://raw.githubusercontent.com/Newtral-datos/workflow-paro-ocupados-INE/main/datos/tasa_paro_ccaa.csv` | `https://raw.githubusercontent.com/Newtral-datos/workflow-paro-ocupados-INE/main/datos/tasa_paro_ccaa.json` | INE, Encuesta de Población Activa (EPA) | `https://www.ine.es/jaxiT3/Tabla.htm?t=65334` |
+| Paro en Europa | `https://raw.githubusercontent.com/Newtral-datos/workflow-paro-ocupados-INE/main/datos/tasa_paro_europa.csv` | `https://raw.githubusercontent.com/Newtral-datos/workflow-paro-ocupados-INE/main/datos/tasa_paro_europa.json` | Eurostat | `https://ec.europa.eu/eurostat/databrowser/view/une_rt_m/default/table` |
+| Paro juvenil en Europa | `https://raw.githubusercontent.com/Newtral-datos/workflow-paro-ocupados-INE/main/datos/paro_juvenil_europa.csv` | `https://raw.githubusercontent.com/Newtral-datos/workflow-paro-ocupados-INE/main/datos/paro_juvenil_europa.json` | Eurostat | `https://ec.europa.eu/eurostat/databrowser/view/une_rt_m/default/table` |
 
 - Trimestres en formato `2026Q2` (Datawrapper lo reconoce como fecha); meses en `2026-08`.
 - Columnas para los mapas de Datawrapper (vacías para España y la UE-27, que no están en los mapas):
