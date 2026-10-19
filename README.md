@@ -65,7 +65,7 @@ En Datawrapper: *Upload data → Link external dataset*, pega la URL del CSV y, 
     oficiales; el mapa no reconoce "Comunitat Valenciana" ni "Illes Balears".
   - CSV de Europa: `codigo_iso` (ISO-2, válido en todos los mapas de Europa; Grecia es `GR`,
     no `EL` como en Eurostat). Los mapas no tienen nombres en español.
-- La variación interanual es relativa: `(tasa / tasa hace un año − 1) × 100`. En Europa se
+- La variación interanual está en puntos porcentuales: `tasa − tasa hace un año`. En Europa se
   calcula con el último mes publicado por cada país.
 
 `datos/auxiliar/` guarda los datos intermedios (no van a Datawrapper). No se llama `aux`

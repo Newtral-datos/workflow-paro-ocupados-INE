@@ -38,8 +38,8 @@ def escribir(nombre, df):
 
 
 def variacion(actual, anterior):
-    """Variación relativa en %, respecto al mismo periodo del año anterior."""
-    return ((actual / anterior - 1) * 100).round(2)
+    """Variación en puntos porcentuales respecto al mismo periodo del año anterior."""
+    return (actual - anterior).round(2)
 
 
 # --- Series nacionales -------------------------------------------------------------
